@@ -1,67 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
     <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
              This is Mars-Rover Project
         </title>
-        <Script>
-			var input1 = document.getElementById("size").value;
-			var input2 = document.getElementById("start1").value;
-			var input3 = document.getElementById("command1").value;
-			var input4 = document.getElementById("start2").value;
-			var input5 = document.getElementById("command2").value;
-
-			var size = input1.split(" ");
-			var firstInitial = input2.split(" ");
-			var command1 = input3.split(" ");
-			var secondInitial = input4.split(" ");
-			var command2 = input5.split(" ");
-			var derection1 = firstInitial[2];
-			var derection2 = secondInitial[2];
-			
-			
-			fucntion defineDirection(var derection,var turn){
-				if ( derection = "N"){
-					if( turn = "R"){
-						derection = "E";
-					}else if(turn = "L"){
-						derection = "W";
-					}
-				}else if( derection = "W"){
-					if( turn = "R"){
-						derection = "N";
-					}else if(turn = "L"){
-						derection = "S";
-					}
-				}else if ( derection = "E"){
-					if( turn = "R"){
-						derection = "S";
-					}else if(turn = "L"){
-						derection = "N";
-						}
-				}else if ( derection = "S"){
-					if( turn = "R"){
-						derection = "W";
-					}else if(turn = "L"){
-						derection = "E";
-					}
-				}
-				
-			
-			}
-			
-			
-
-        </Script>
+		<link rel="stylesheet" href="Mars-rover-CSS.css">
+       
     </head>
-    <body>
-        Please enter the size of the Plateau <input id="size" type="string" name="size"><br>
-		Please enter the start position of the first Plateau<input id="start1" type="string" name="start1"><br>
-		Please enter the move command of the first Plateau<input id="command1" type="string" name="command1"><br>
-		Please enter the start position of the second Plateau<input id="start2" type="string" name="start2"><br>
-		Please enter the move command of the second Plateau<input id="command2" type="string" name="command2"><br>
+    
+	
+	
+	<body>
+		<h1> Mars Rover</h1><br>
+        
+		<table>
+		<tr>
+			<td><label>Please enter the size of the Plateau</label></td>
+			<th><input id="size" type="string" name="size"></th>
+		</tr>
+		<tr>
+			<td><label>Please enter the start position of the first Plateau</label></td>
+			<th><input id="start1" type="string" name="start1"></th>
+		</tr>
+		<tr>
+			<td><label>Please enter the move command of the first Plateau</label></td>
+			<th><input id="command1" type="string" name="command1"></th>
+		</tr>
+		<tr>
+			<td><label>Please enter the start position of the second Plateau</label></td>
+			<th><input id="start2" type="string" name="start2"></th>
+		</tr>
+		<tr>
+			<td><label>Please enter the move command of the second Plateau</label></td>
+			<th><input id="command2" type="string" name="command2"></th>
+		</tr>
+		</table>
 		
+		
+		<div>
+		<button type="button" onclick="outputFirst()"> Get first output</button>
+		<p id="out1"></p>
+		
+		<button type="button" onclick="outputSecond()"> Get first output</button>
+		<p id="out2"></p>
+		</div>
+		
+		
+		 
     </body>
+	<Script src = "mars-rover.js"></Script>
 </html>
 
 
