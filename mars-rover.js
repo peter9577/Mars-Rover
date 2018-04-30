@@ -13,16 +13,33 @@ function outputFirst(){
 			
 				
 				
-				
+		function turn(initialDirection, eachCommand) {
+				var compassDirection= ['N', 'E', 'S', 'W'];
+				var index = compassDirection.indexOf(initialDirection);
+
+					if (eachCommand === 'R') {
+					  index = (index + 1 > 3) ? 0 : index + 1
+
+					  return compassDirection[index];
+					}
+
+					if (eachCommand === 'L') {
+					  index = (index - 1 < 0) ? 3 : index - 1
+
+					  return compassDirection[index];
+					}
+		}	
 				
 		function output(initialPoint, command) {
-			var x = Number( initialPoint[0] );
-			var y = Number( initialPoint[2] );
-			var direction = initialPoint.charAt( initialPoint.length -1 );
+			
+			var initial = initialPoint.split(" ");
+			var x = initial[0];
+			var y = initial[1];
+			var direction = initial[2];
 			var steps = command.split('');
 
 			steps.forEach( function(step){
-				 if ( step === 'L' || step === 'R' ) {
+				 if ( step == 'L' || step == 'R' ) {
 						return direction = turn(direction, step);
 					}
 						return action(direction);
@@ -52,20 +69,5 @@ function outputFirst(){
 				  
 				  
 				  
-		function turn(initialDirection, eachCommand) {
-				var compassDirection= ['N', 'E', 'S', 'W'];
-				var index = compassDirection.indexOf(initialDirection);
-
-					if (eachCommand === 'R') {
-					  index = (index + 1 > 3) ? 0 : index + 1
-
-					  return compassDirection[index];
-					}
-
-					if (eachCommand === 'L') {
-					  index = (index - 1 < 0) ? 3 : index - 1
-
-					  return compassDirection[index];
-					}
-		}
+		
 			
