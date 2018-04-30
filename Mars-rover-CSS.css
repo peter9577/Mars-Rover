@@ -1,0 +1,31 @@
+body {
+	  background-image:url("marsrover.jpg");
+	  background-attachment:fixed;
+	  background-position:center;
+	  color:#ffffff
+	}
+h1{
+	text-align:center;
+	color:#ff0000;
+
+}
+table{
+	text-alight:left;
+	font-size:20px;
+	
+	
+	
+	
+}
+
+p{
+	font-size:20px;
+	font-weight:bold;
+	color:#ffffff;
+	
+}
+button{
+	margin:10px;
+	color:blue;
+	
+}
