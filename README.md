@@ -1,5 +1,5 @@
 # Mars-Rover
-This is a job application test of JavaScript and CSS from Tornada Incorporated
+This is a job interview test of JavaScript and CSS 
 
 
 To introduce this project breifly
