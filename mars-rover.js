@@ -1,4 +1,4 @@
-function outputFirst(){
+	function outputFirst(){
 			
 			var input1 = document.getElementById("size").value;
 			var input2 = document.getElementById("start1").value;
@@ -6,6 +6,7 @@ function outputFirst(){
 			document.getElementById("out1").innerHTML = "your first output is " + output(input2,input3);
 		}
 		function outputSecond(){
+			var input1 = document.getElementById("size").value;
 			var input4 = document.getElementById("start2").value;
 			var input5 = document.getElementById("command2").value;
 			document.getElementById("out2").innerHTML = "your second output is " + output(input4,input5);
@@ -13,7 +14,43 @@ function outputFirst(){
 			
 				
 				
-		function turn(initialDirection, eachCommand) {
+		
+				
+		function output(initialPoint, command) {
+			
+			var initial = initialPoint.split(" ");
+			var x = Number(initial[0]);
+			var y = Number(initial[1]);
+			var direction = initial[2];
+			var steps = command.split('');
+
+			steps.forEach( function(step){
+				 if ( step == 'L' || step == 'R' ) {
+						return direction = turn(direction, step);
+					}
+						return action(direction);
+					});
+
+			function action(eachCommand){
+				switch (eachCommand) {
+					case 'N':
+						y +=1
+						 break;
+					case 'E':
+						x +=1
+						 break;
+					case 'S':
+						y -=1
+						 break;
+					case 'W':
+						x -=1
+						 break;
+					  }
+					}
+
+					return [x, y, direction].join(',');
+					
+			function turn(initialDirection, eachCommand) {
 				var compassDirection= ['N', 'E', 'S', 'W'];
 				var index = compassDirection.indexOf(initialDirection);
 
@@ -28,44 +65,10 @@ function outputFirst(){
 
 					  return compassDirection[index];
 					}
-		}	
-				
-		function output(initialPoint, command) {
-			
-			var initial = initialPoint.split(" ");
-			var x = initial[0];
-			var y = initial[1];
-			var direction = initial[2];
-			var steps = command.split('');
-
-			steps.forEach( function(step){
-				 if ( step == 'L' || step == 'R' ) {
-						return direction = turn(direction, step);
-					}
-						return action(direction);
-					});
-
-			function action(eachCommand){
-				switch (eachCommand) {
-					case 'N':
-						y =y + 1
-						 break;
-					case 'E':
-						x =x + 1
-						 break;
-					case 'S':
-						y =y - 1
-						 break;
-					case 'W':
-						x =x - 1
-						 break;
-					  }
-					}
-
-					return [x, y, direction].join(',');
+		}			  
 		}
 
-				  
+		
 				  
 				  
 				  
